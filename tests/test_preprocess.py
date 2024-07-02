@@ -6,6 +6,11 @@ def test_clean_text():
     expected_output = "beispieltext funktion testen"
     assert clean_text(input_text) == expected_output
 
+def test_clean_text_with_numbers():
+    input_text = "Das ist ein Beispieltext mit Zahlen 123, um die Funktion zu testen!"
+    expected_output = "beispieltext zahlen funktion testen"
+    assert clean_text(input_text) == expected_output
+
 def test_clean_text_with_stopwords():
     input_text = "Das ist ein weiterer Test für die Funktion!"
     expected_output = "weiterer test funktion"

@@ -16,6 +16,8 @@ def clean_text(text):
     """
     # Remove punctuation
     text = re.sub(r'[^\w\s]', '', text)
+     # Remove numbers
+    text = re.sub(r'\b\d+\b', '', text)
     # Convert to lowercase
     text = text.lower()
     # Remove stopwords
