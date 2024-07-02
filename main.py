@@ -17,9 +17,11 @@ def main():
     cleaned_sentences = [clean_text(sentence) for sentence in sentences]
     
     # Analyze word frequencies
+    word_freq_df = get_word_frequencies(cleaned_sentences)
     
     # Save the results to a CSV file
-    return 0
+    word_freq_df.to_csv('data/word_frequencies.csv', index=False)
+    print("Word frequencies saved to 'data/word_frequencies.csv'")
 
 if __name__ == "__main__":
     main()
