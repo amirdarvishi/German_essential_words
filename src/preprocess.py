@@ -1,3 +1,9 @@
+import re
+import nltk
+from nltk.corpus import stopwords
+
+nltk.download('stopwords')
+
 def clean_text(text):
     """
     Clean the input text by removing punctuation, converting to lowercase, and removing stopwords.
@@ -9,9 +15,10 @@ def clean_text(text):
     str: The cleaned text.
     """
     # Remove punctuation
-    
+    text = re.sub(r'[^\w\s]', '', text)
     # Convert to lowercase
-    
+    text = text.lower()
     # Remove stopwords
-    
-    return "text"
+    stop_words = set(stopwords.words('german'))
+    text = ' '.join([word for word in text.split() if word not in stop_words])
+    return text
