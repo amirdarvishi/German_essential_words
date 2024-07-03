@@ -23,4 +23,5 @@ def clean_text(text):
     # Remove stopwords
     stop_words = set(stopwords.words('german'))
     text = ' '.join([word for word in text.split() if word not in stop_words])
+   
     return text
